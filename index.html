@@ -4,39 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="./styles.css">
+    <link rel="stylesheet" href="./styles.css">
+
+
     <title>Document</title>
 </head>
 
 <body>
 
     <div class="react-multi-carousel-list  sc-5e8fb035-0 eNKFdK" dir="ltr">
-    <ul class="react-multi-carousel-track "
-        style="transition: none; overflow: unset; transform: translate3d(0px, 0px, 0px);">
-        <li data-index="0" aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active "
-            style="flex: 1 1 auto; position: relative; width: 427px;">
-            <div class="sc-1318d5d0-1 jtDtBU"><a class="sc-1318d5d0-0 cxfvWz"
-                    href="/ombanken/nyheder/oplevelser-til-bankens-kunder-og-aktionaerer-i-2025">
-                    <div class="sc-1318d5d0-2 egpjVi"><span class="sc-b4bc64a8-0 fdKnwK sc-1318d5d0-3 eGbEIa">
-                            <div class="blurhash" aria-hidden="true"
-                                style="display: inline-block; height: 100%; width: 100%; position: relative;"><canvas
-                                    height="32" width="32"
-                                    style="position: absolute; inset: 0px; width: 100%; height: 100%;"></canvas></div>
-                            <img src="./image1.webp"
-                                alt="Mange siddende mennesker til aktionærmøde." class="sc-b4bc64a8-1 cCwCOT">
-                        </span></div>
-                    <div class="sc-1318d5d0-4 drwFKY">
-                        <div class="sc-5e8fb035-4 iOlMwc"><span class="sc-5e8fb035-5 jtCvhM">11. February 2025</span>
+        <ul class="react-multi-carousel-track "
+            style="transition: none; overflow: unset; transform: translate3d(0px, 0px, 0px);">
+            <li data-index="0" aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active "
+                style="flex: 1 1 auto; position: relative; width: 427px;">
+                <div class="sc-1318d5d0-1 jtDtBU">
+
+                    <!-- Use <div> instead of <a>, and add js for the link -->
+                    <div class="sc-1318d5d0-0 cxfvWz" onClick="window.location.href='https://www.djurslandsbank.dk/ombanken/nyheder/oplevelser-til-bankens-kunder-og-aktionaerer-i-2025'">
+                        <div class="sc-1318d5d0-2 egpjVi">
+                            <span class="sc-b4bc64a8-0 fdKnwK sc-1318d5d0-3 eGbEIa">
+                                <div class="blurhash" aria-hidden="true"
+                                    style="display: inline-block; height: 100%; width: 100%; position: relative;">
+                                    <canvas height="32" width="32"
+                                        style="position: absolute; inset: 0px; width: 100%; height: 100%;">
+                                    </canvas>
+                                </div>
+
+                                <!-- alt should be empty because they are decorative -->
+                                <img src="./image1.webp" alt="" class="sc-b4bc64a8-1 cCwCOT">
+                            </span>
                         </div>
-                        <h3 class="sc-uYFMi sc-5e8fb035-3 dphLir hSdWtw">Oplevelser til bankens kunder og aktionærer i
-                            2025</h3>
-                        <p class="sc-1318d5d0-5 euxoKH">Vi inviterer til generalforsamling og aktionærmøde i marts
-                            måned. </p>
+                        <div class="sc-1318d5d0-4 drwFKY">
+                            <div class="sc-5e8fb035-4 iOlMwc">
+                                <span class="sc-5e8fb035-5 jtCvhM">
+                                    11. February 2025
+                                </span>
+                            </div>
+
+                            <!-- Use <a> to wrap h3 -->
+                            <a
+                                href="https://www.djurslandsbank.dk/ombanken/nyheder/oplevelser-til-bankens-kunder-og-aktionaerer-i-2025">
+                                <h3 class="sc-uYFMi sc-5e8fb035-3 dphLir hSdWtw">
+                                    Oplevelser til bankens kunder og aktionærer i
+                                    2025
+                                </h3>
+                            </a>
+                            <p class="sc-1318d5d0-5 euxoKH">
+                                Vi inviterer til generalforsamling og aktionærmøde i marts
+                                måned.
+                            </p>
+                        </div>
                     </div>
-                </a></div>
-        </li>
-        <li data-index="1" aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active "
+                </div>
+            </li>
+            <!-- <li data-index="1" aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active "
             style="flex: 1 1 auto; position: relative; width: 427px;">
             <div class="sc-1318d5d0-1 jtDtBU"><a class="sc-1318d5d0-0 cxfvWz"
                     href="/ombanken/nyheder/aarsregnskab-aktionaererne-kan-igen-se-frem-til-et-flot-udbytte">
@@ -60,11 +81,11 @@
                             til aktionærerne, hvilket bliver indstillet til bankens generalforsamling 18. marts. </p>
                     </div>
                 </a></div>
-        </li>
+        </li> -->
 
-    </ul>
-</div>
-  
+        </ul>
+    </div>
+
 </body>
 
 </html>
