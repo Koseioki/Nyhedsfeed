@@ -118,6 +118,19 @@ li {
     background-size: 100% 0.5em;
     box-shadow: 0px 0px 0px 2px rgb(0, 91, 103);
 }
+
+a {
+    color: rgb(0, 91, 103);
+    /* font-family: FreightSans-Book, serif; */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.jtDtBU:hover a,
+.jtDtBU:focus-within a {
+    text-decoration: underline;
+}
+
 * {
     scroll-margin-top: 10rem;
     box-sizing: border-box;
@@ -132,17 +145,7 @@ div {
     user-select: none;
     -webkit-user-drag: none;
 }
-a {
-    color: rgb(0, 91, 103);
-    /* font-family: FreightSans-Book, serif; */
-    cursor: pointer;
-    text-decoration: none;
-}
 
-a:hover,
-a:focus {
-    text-decoration: underline;
-}
 
 
 .egpjVi {
