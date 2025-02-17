@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>List Navigation</title>
+  <title>Carousel Demo</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
     }
-    
-    .container{
-      display:flex;
-      align-items: center;
-    }
-
     ul {
       list-style: none;
       padding: 0;
       display: flex;
       gap: 10px;
     }
-
     li {
       margin: 10px;
       padding: 10px;
@@ -30,11 +22,9 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-
     li:focus {
       outline: 2px solid #007BFF;
     }
-
     button {
       padding: 10px 15px;
       font-size: 16px;
@@ -44,43 +34,55 @@
       background-color: #007BFF;
       color: white;
     }
-
     button:focus {
       outline: 2px solid #0056b3;
     }
-
     button:disabled {
       background-color: #cccccc;
       cursor: not-allowed;
     }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .list-container{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
   </style>
 </head>
-
 <body>
-  <h1>List Navigation</h1>
-  <a href="./index.html">Nyhedsfeed cards</a>
-  <div class="navigation-status" aria-live="polite" id="status" style="margin-bottom: 10px;">
-    Showing items 1-3.
+  <h1>Carousel Demo</h1>
+  <a href="./index.html">Back to Nyhedsfeed</a>
+  <div aria-live="polite" id="live-region" class="sr-only"></div>
+  <div class="list-container">
+  <div id="controls-top">
+    <button id="prevButton" aria-label="Go to precious slide" style="display: none;">&lt;</button>
   </div>
-  <section class="container">
-    <div id="controls-top">
-      <button id="prevButton" style="display: none;">Previous Items</button>
-    </div>
-    <ul id="list">
-      <li tabindex="0">Item 1</li>
-      <li tabindex="0">Item 2</li>
-      <li tabindex="0">Item 3</li>
-    </ul>
-    <div id="controls-bottom">
-      <button id="nextButton">Next Items</button>
-    </div>
-  </section>
+  <ul id="list">
+    <li tabindex="0">Item 1</li>
+    <li tabindex="0">Item 2</li>
+    <li tabindex="0">Item 3</li>
+  </ul>
+  <div id="controls-bottom">
+    <button id="nextButton" aria-label="Go to next slide">&gt;</button>
+  </div>
+</div>
 
   <script>
     const list = document.getElementById('list');
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
-    const status = document.getElementById('status');
+    const liveRegion = document.getElementById('live-region');
 
     const itemsGroup1 = [
       '<li tabindex="0">Item 1</li>',
@@ -98,14 +100,14 @@
     function updateList() {
       if (isShowingGroup1) {
         list.innerHTML = itemsGroup1.join('');
-        status.textContent = 'Showing items 1-3.';
         prevButton.style.display = 'none';
         nextButton.style.display = 'inline-block';
+        liveRegion.textContent = 'Showing items 1 to 3.'; // Announce change
       } else {
         list.innerHTML = itemsGroup2.join('');
-        status.textContent = 'Showing items 4-6.';
         prevButton.style.display = 'inline-block';
         nextButton.style.display = 'none';
+        liveRegion.textContent = 'Showing items 4 to 6.'; // Announce change
       }
 
       // Set focus on the first item
@@ -126,5 +128,4 @@
     updateList();
   </script>
 </body>
-
 </html>
