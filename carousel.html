@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,14 @@
       font-family: Arial, sans-serif;
       margin: 20px;
     }
+
     ul {
       list-style: none;
       padding: 0;
       display: flex;
       gap: 10px;
     }
+
     li {
       margin: 10px;
       padding: 10px;
@@ -22,9 +25,11 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
     li:focus {
       outline: 2px solid #007BFF;
     }
+
     button {
       padding: 10px 15px;
       font-size: 16px;
@@ -34,13 +39,16 @@
       background-color: #007BFF;
       color: white;
     }
+
     button:focus {
       outline: 2px solid #0056b3;
     }
+
     button:disabled {
       background-color: #cccccc;
       cursor: not-allowed;
     }
+
     .sr-only {
       position: absolute;
       width: 1px;
@@ -53,30 +61,31 @@
       border: 0;
     }
 
-    .list-container{
+    .list-container {
       display: flex;
       flex-direction: row;
       align-items: center;
     }
   </style>
 </head>
+
 <body>
   <h1>Carousel Demo</h1>
   <a href="./index.html">Back to Nyhedsfeed</a>
   <div aria-live="polite" id="live-region" class="sr-only"></div>
   <div class="list-container">
-  <div id="controls-top">
-    <button id="prevButton" aria-label="Go to precious slide" style="display: none;">&lt;</button>
+    <div id="controls-top" aria-describedby="live-region">
+      <button id="prevButton" aria-label="Go to precious slide" style="display: none;">&lt;</button>
+    </div>
+    <ul id="list">
+      <li tabindex="0">Item 1</li>
+      <li tabindex="0">Item 2</li>
+      <li tabindex="0">Item 3</li>
+    </ul>
+    <div id="controls-bottom">
+      <button id="nextButton" aria-label="Go to next slide">&gt;</button>
+    </div>
   </div>
-  <ul id="list">
-    <li tabindex="0">Item 1</li>
-    <li tabindex="0">Item 2</li>
-    <li tabindex="0">Item 3</li>
-  </ul>
-  <div id="controls-bottom">
-    <button id="nextButton" aria-label="Go to next slide">&gt;</button>
-  </div>
-</div>
 
   <script>
     const list = document.getElementById('list');
@@ -128,4 +137,5 @@
     updateList();
   </script>
 </body>
+
 </html>
